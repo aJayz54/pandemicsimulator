@@ -1,3 +1,6 @@
+# Intro
+Hey! This is a pandemic simulator I've been working on recently meant to simulate the growth of a pandemic in a population depending on some variables you input. The app itself is pretty simple, you just input a few stats and iterate through the generations of the population. I'll be updating this to make it more statistically accurate/more complex of a simulation! 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
