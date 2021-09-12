@@ -1,0 +1,27 @@
+.node {
+    width: 15px;
+    height: 15px;
+    outline: 1px solid rgb(175, 216, 248);
+    display: inline-block;
+  }
+  
+  .node-new {
+    background-color: red;
+  }
+  
+  .node-old {
+    background-color: darkred;
+  }
+
+  .node-immune {
+      background-color: rgb(255, 100, 200);
+  }
+
+  .node-dead {
+      background-color: black;
+  }
+
+  .node-vaccinated {
+      background-color: green;
+  }
+  
