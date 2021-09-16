@@ -16,6 +16,7 @@ export default class App extends React.Component {
       vaccinatedRate: 0,
       tempGeneration: 0,
       generations: 100,
+      maxGenerations: 100,
       tempGenerations: 100, 
       tempVaccinatedRate: 0,
       tempvaccinated: false,
@@ -71,6 +72,7 @@ export default class App extends React.Component {
   
   handleGenerationsChange(event) {
     this.setState({tempGenerations : parseInt(event.target.value)});
+    this.setState({maxGenerations : parseInt(event.target.value)});
   };
 
   handleRateChange(event) {
@@ -79,7 +81,7 @@ export default class App extends React.Component {
 
   handleSubmit(event) {
     var spreadability = 0.5;
-    if (this.tempdistancing) {
+    if (this.state.tempdistancing) {
       spreadability = 0.2;
     }
     const generationSequence = returnGenerations(this.state.grid, spreadability, this.state.tempvaccinated, this.state.tempVaccinatedRate, this.state.tempdeathrate, this.state.tempGenerations);
@@ -119,6 +121,9 @@ export default class App extends React.Component {
   }
 
   handleGenSubmit(event) {
+    if (this.state.tempGeneration > this.state.maxGenerations - 1) {
+      this.state.tempGeneration = this.state.maxGenerations - 1
+    }
     this.setState(prevstate => 
       ({
         generation : prevstate.tempGeneration
@@ -227,20 +232,22 @@ export default class App extends React.Component {
                     );
                 })}
           </div>
-          <div className="gen">
+          <div>
           {(this.state.generation !== 0) && 
             <form onSubmit = {this.handleBack}>
               <input type="submit" value="Prev" />
             </form>
           }
             Generation: 
-            <input type = "number" value = {this.state.tempGeneration} onChange = {this.handleGenChange} min="0" max="100"/>
+            <input type = "number" value = {this.state.tempGeneration} onChange = {this.handleGenChange} min="0" max={this.state.tempGeneration - 1} />
             <form onSubmit = {this.handleGenSubmit}>
               <input type="submit" value = "Submit" />
             </form>
+          {(this.state.generation !== this.state.maxGenerations - 1) && 
           <form onSubmit={this.handleGenerationSubmit}>
             <input type="submit" value="Next" />
           </form>
+          }
           </div>
           </>
         } 
