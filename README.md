@@ -1,3 +1,14 @@
+# Intro
+Hey! This is a pandemic simulator I've been working on recently made using React meant to simulate the growth of a pandemic in a population depending on some variables you input. The app itself is pretty simple, you just input a few stats and iterate through the generations of the population. I'll be updating this to make it more statistically accurate/more complex of a simulation! 
+
+While inputting statistics, you can click anywhere on the grid to infect the squre. After running the generations, there will be the following color code: 
+bright red: just infected (newly infected that generation) 
+dark red: still contagious (was newly infected the previous generation) 
+pink: immune (no longer contagious and immune to the disease) 
+black: dead (rip) 
+green: vaccinated (this will happen right at the start of the generations depending on what vaccination rate you chose)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
