@@ -170,6 +170,7 @@ export default class App extends React.Component {
                 })}
           </div>
           <div className="inputBox">
+            <h2>Input Box</h2>
             <form onSubmit={this.handleSubmit}>
               <label>
                 Number of Generations? 
@@ -182,17 +183,16 @@ export default class App extends React.Component {
               </label>
               <br />
               <label>
-                Vaccinated?
+                Vaccinated?   
                 <input type="checkbox" onChange={this.handleVChange} />
               </label>
               <br />
               <label>
-                Vaccinated Rate?
-                <input type="number" value={this.state.tempVaccinatedRate} onChange={this.handleRateChange} step="0.01"/>
+                Vaccinated Rate? <input type="number" value={this.state.tempVaccinatedRate} onChange={this.handleRateChange} step="0.01"/>
               </label>
               <br />
               <label>
-                Social Distancing?
+                Social Distancing?    
                 <input type="checkbox" onChange={this.handleDChange} />
               </label>
               <br />
